@@ -1,0 +1,17 @@
+# Archivos específicos de Eclipse que NO deben subirse
+.metadata/
+.settings/
+.classpath
+.project
+
+# Carpetas de compilación
+bin/
+build/
+target/
+
+# Archivos compilados
+*.class
+
+# Logs y temporales
+*.log
+*.tmp
