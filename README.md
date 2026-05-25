@@ -33,6 +33,11 @@ Para ejecutar este proyecto en un entorno local, sigue estos pasos:
 
 ### 2. Configuración del Proyecto en Eclipse
 1. Clona este repositorio en tu espacio de trabajo local.
+2. Abre el archivo `src/main/java/com/hmb/config/DatabaseConfig.java`.
+3. Actualiza la variable `PASSWORD` con la contraseña de tu instalación local de MySQL:
+   ```java
+   private static final String PASSWORD = "tu_contraseña_aqui";
+
 
 ## Como jugar?
 1. Regístrate: Crea un usuario nuevo en la pantalla de inicio.
@@ -42,7 +47,3 @@ Para ejecutar este proyecto en un entorno local, sigue estos pasos:
 3. Adivina: Ingresa un número del 1 al 100. El sistema te dará pistas si el número secreto es "mayor" o "menor".
 
 4. Gana: Al adivinar la cantidad exacta, tu victoria se registrará en la base de datos y aparecerás en el Salón de la Fama.
-3. Abre el archivo `src/main/java/com/hmb/config/DatabaseConfig.java`.
-4. Actualiza la variable `PASSWORD` con la contraseña de tu instalación local de MySQL:
-   ```java
-   private static final String PASSWORD = "tu_contraseña_aqui";
