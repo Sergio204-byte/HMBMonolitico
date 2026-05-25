@@ -1,12 +1,12 @@
 package com.hmb.dao;
 
 import com.hmb.config.DatabaseConfig;
-import com.hmb.models.Pedido;
+import com.hmb.models.Partida;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 //DAO tabla partidas
-public class PedidoDAO {
+public class PartidaDAO {
 
     //Registra el inicio de una partida nueva
     public boolean insertarPartida(int jugadorId, int intentos) {
@@ -25,8 +25,8 @@ public class PedidoDAO {
     }
 
     //Obtiene el historial de partidas de un jugador específico
-    public List<Pedido> obtenerPartidasPorJugador(int jugadorId) {
-        List<Pedido> lista = new ArrayList<>();
+    public List<Partida> obtenerPartidasPorJugador(int jugadorId) {
+        List<Partida> lista = new ArrayList<>();
         String sql = "SELECT * FROM partidas WHERE jugador_id = ? ORDER BY fecha_ingreso DESC";
         
         try (Connection conn = DatabaseConfig.getConnection();
@@ -35,7 +35,7 @@ public class PedidoDAO {
             stmt.setInt(1, jugadorId);
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    lista.add(new Pedido(
+                    lista.add(new Partida(
                         rs.getInt("id"),
                         rs.getInt("jugador_id"),
                         rs.getTimestamp("fecha_ingreso"),

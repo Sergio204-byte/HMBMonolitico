@@ -11,7 +11,7 @@ public class DatabaseConfig {
     //Credenciales por defecto de MySQL. 
     //MODIFICAR CREDENCIALES SEGÚN CONFIGURACION LOCAL
     private static final String USER = "root"; 
-    private static final String PASSWORD = "tu_contraseña_aqui"; 
+    private static final String PASSWORD = ""; 
 
     public static Connection getConnection() throws SQLException {
         try {

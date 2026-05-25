@@ -1,20 +1,18 @@
 package com.hmb.models;
 import java.sql.Timestamp;
-//Modelo de tabla partidas
-public class Pedido {
+//modelo de tabla ganadores
+public class Ganador {
     private int id;
     private int jugadorId;
     private Timestamp fechaIngreso;
-    private int intentos;
-    
-    //Constructor vacio
-    public Pedido() {}
+
+    //Constructor vacío 
+    public Ganador() {}
     //Constructor completo
-    public Pedido(int id, int jugadorId, Timestamp fechaIngreso, int intentos) {
+    public Ganador(int id, int jugadorId, Timestamp fechaIngreso) {
         this.id = id;
         this.jugadorId = jugadorId;
         this.fechaIngreso = fechaIngreso;
-        this.intentos = intentos;
     }
 
     //Getters y Setters
@@ -24,6 +22,4 @@ public class Pedido {
     public void setJugadorId(int jugadorId) { this.jugadorId = jugadorId; }
     public Timestamp getFechaIngreso() { return fechaIngreso; }
     public void setFechaIngreso(Timestamp fechaIngreso) { this.fechaIngreso = fechaIngreso; }
-    public int getIntentos() { return intentos; }
-    public void setIntentos(int intentos) { this.intentos = intentos; }
 }

@@ -1,12 +1,12 @@
 package com.hmb.dao;
 
 import com.hmb.config.DatabaseConfig;
-import com.hmb.models.Hamburguesa;
+import com.hmb.models.Ganador;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 //DAO tabla ganadores
-public class InventarioDAO {
+public class GanadorDAO {
 
     //Registra un nuevo registro de victoria
     public boolean registrarGanador(int jugadorId) {
@@ -24,8 +24,8 @@ public class InventarioDAO {
     }
 
     //Obtiene la lista global de ganadores para mostrar un Top en el JSP
-    public List<Hamburguesa> obtenerTodosLosGanadores() {
-        List<Hamburguesa> lista = new ArrayList<>();
+    public List<Ganador> obtenerTodosLosGanadores() {
+        List<Ganador> lista = new ArrayList<>();
         String sql = "SELECT * FROM ganadores ORDER BY fecha_ingreso DESC";
         
         try (Connection conn = DatabaseConfig.getConnection();
@@ -33,7 +33,7 @@ public class InventarioDAO {
              ResultSet rs = stmt.executeQuery(sql)) {
             
             while (rs.next()) {
-                lista.add(new Hamburguesa(
+                lista.add(new Ganador(
                     rs.getInt("id"),
                     rs.getInt("jugador_id"),
                     rs.getTimestamp("fecha_ingreso")
