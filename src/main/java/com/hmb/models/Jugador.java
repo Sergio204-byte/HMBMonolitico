@@ -1,15 +1,15 @@
 package com.hmb.models;
 //Modelo para tabla jugadores
-public class Cliente{
+public class Jugador{
     private int id;
     private String usuario;
     private String contrasena;
 
     //Constructor vacío 
-    public Cliente() {}
+    public Jugador() {}
 
     //Constructor completo
-    public Cliente(int id, String usuario, String contrasena) {
+    public Jugador(int id, String usuario, String contrasena) {
         this.id = id;
         this.usuario = usuario;
         this.contrasena = contrasena;

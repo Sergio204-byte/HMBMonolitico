@@ -1,18 +1,20 @@
 package com.hmb.models;
 import java.sql.Timestamp;
-//modelo de tabla ganadores
-public class Hamburguesa {
+//Modelo de tabla partidas
+public class Partida {
     private int id;
     private int jugadorId;
     private Timestamp fechaIngreso;
-
-    //Constructor vacío 
-    public Hamburguesa() {}
+    private int intentos;
+    
+    //Constructor vacio
+    public Partida() {}
     //Constructor completo
-    public Hamburguesa(int id, int jugadorId, Timestamp fechaIngreso) {
+    public Partida(int id, int jugadorId, Timestamp fechaIngreso, int intentos) {
         this.id = id;
         this.jugadorId = jugadorId;
         this.fechaIngreso = fechaIngreso;
+        this.intentos = intentos;
     }
 
     //Getters y Setters
@@ -22,4 +24,6 @@ public class Hamburguesa {
     public void setJugadorId(int jugadorId) { this.jugadorId = jugadorId; }
     public Timestamp getFechaIngreso() { return fechaIngreso; }
     public void setFechaIngreso(Timestamp fechaIngreso) { this.fechaIngreso = fechaIngreso; }
+    public int getIntentos() { return intentos; }
+    public void setIntentos(int intentos) { this.intentos = intentos; }
 }
