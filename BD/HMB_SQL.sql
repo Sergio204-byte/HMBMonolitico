@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS HMB;
+USE HMB;
+
+CREATE TABLE IF NOT EXISTS jugadores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
+    contrasena VARCHAR(50) NOT NULL 
+);
+
+CREATE TABLE IF NOT EXISTS partidas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    jugador_id INT NOT NULL,
+    fecha_ingreso DATETIME NOT NULL,
+    intentos INT DEFAULT 0,
+    FOREIGN KEY (jugador_id) REFERENCES jugadores(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS ganadores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    jugador_id INT NOT NULL,
+    fecha_ingreso DATETIME NOT NULL,
+    FOREIGN KEY (jugador_id) REFERENCES jugadores(id) ON DELETE CASCADE
+);
+
+INSERT INTO jugadores VALUES (123, "Gil", "123456");
